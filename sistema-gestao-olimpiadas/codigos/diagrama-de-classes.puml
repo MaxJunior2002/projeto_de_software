@@ -1,0 +1,33 @@
+@startuml
+class Pais {
+  - String nome
+  + getQuadroMedalhas()
+}
+
+class Atleta {
+  - String nome
+  - String genero
+}
+
+class Competicao {
+  - String modalidade
+  - DateTime dataHora
+  + registrarResultado()
+}
+
+class Local {
+  - String nome
+  - String endereco
+  + verificarDisponibilidade()
+}
+
+class Resultado {
+  - int posicao
+  - String medalha
+}
+
+Pais "1" *-- "many" Atleta
+Atleta "many" -- "many" Competicao : inscricao
+Competicao "many" o-- "1" Local : ocorre em
+(Atleta, Competicao) .. Resultado
+@endum

@@ -1,0 +1,24 @@
+@startuml
+package "Interface de Usuário" {
+  [Web App]
+  [Mobile App]
+}
+
+package "Módulos de Negócio" {
+  [Gestão de Inscrições]
+  [Gestão de Locais]
+  [Controle de Resultados]
+}
+
+package "Relatórios" {
+  [Gerador de Medalhas]
+}
+
+package "Infraestrutura" {
+  [Acesso a Dados]
+}
+
+"Interface de Usuário" ..> "Módulos de Negócio"
+"Módulos de Negócio" ..> "Relatórios"
+"Módulos de Negócio" ..> "Infraestrutura"
+@endum

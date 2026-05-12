@@ -1,0 +1,16 @@
+@startuml
+node "Dispositivo do Usuário" {
+  [Navegador Web]
+}
+
+node "Servidor de Aplicação (Cloud)" {
+  component "API SGO (.NET/Java/Node)" as API
+}
+
+node "Servidor de Banco de Dados" {
+  database "PostgreSQL / MySQL" as DB_Server
+}
+
+[Navegador Web] -- API : HTTPS
+API -- DB_Server : TCP/IP (Port 5432/3306)
+@endum

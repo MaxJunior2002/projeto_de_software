@@ -1,0 +1,17 @@
+@startuml
+[Interface de Usuário] as UI
+component "Módulo de Inscrições" as Inscricoes
+component "Módulo de Alocação" as Alocacao
+component "Módulo de Resultados" as Resultados
+component "Módulo de Relatórios" as Relatorios
+database "Banco de Dados SGO" as DB
+
+UI --> Inscricoes
+UI --> Alocacao
+UI --> Resultados
+Inscricoes ..> Relatorios
+Resultados ..> Relatorios
+Inscricoes --> DB
+Alocacao --> DB
+Resultados --> DB
+@endum
